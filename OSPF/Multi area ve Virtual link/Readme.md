@@ -9,4 +9,6 @@ Bu lab çalışması fiziksel olarak backbone alanına bağlı olmayan uzak alan
 ### Karşılaşılan Temel Problem
 Buradaki temel problem, OSPF kuralları gereği tüm alanların Area 0'a fiziksel bağlı olma zorunluluğudur. Area 30'un buizolasyonunu aşmak için R3 ve R5 arasındabir Virtual-Link tüneli kurgulanmıştır.
 
+### Topoloji
+https://github.com/Nmkaynar/Network-LAB/blob/main/OSPF/Multi%20area%20ve%20Virtual%20link/Topoloji.png
 

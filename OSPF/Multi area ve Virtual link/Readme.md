@@ -7,7 +7,7 @@ Bu lab çalışması fiziksel olarak backbone alanına bağlı olmayan uzak alan
 - Area 30: Fiziksel olarak Area 0 ile bağlantısı olmayan,Area 20 üzerinden sarkan bir yapıdır.  
 
 ### Karşılaşılan Temel Problem
-Buradaki temel problem, OSPF kuralları gereği tüm alanların Area 0'a fiziksel bağlı olma zorunluluğudur. Area 30'un buizolasyonunu aşmak için R3 ve R5 arasındabir Virtual-Link tüneli kurgulanmıştır.
+Buradaki temel problem, OSPF kuralları gereği tüm alanların Area 0'a fiziksel bağlı olma zorunluluğudur. Area 30'un bu izolasyonunu aşmak için R3 ve R5 arasında bir Virtual-Link tüneli kurgulanmıştır.
 
 ### Topoloji
 

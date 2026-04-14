@@ -1,0 +1,19 @@
+R3(config)#
+
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+ no sh
+
+interface GigabitEthernet0/0
+ ip address 10.0.11.2 255.255.255.252
+ no sh
+ ip ospf 1 area 0
+
+interface GigabitEthernet1/0
+ ip address 10.0.13.1 255.255.255.252
+ no sh
+ ip ospf 1 area 20
+
+router ospf 1
+ router-id 3.3.3.3
+ area 20 virtual-link 5.5.5.5

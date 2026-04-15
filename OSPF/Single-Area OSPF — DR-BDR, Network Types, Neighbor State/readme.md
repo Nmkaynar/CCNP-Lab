@@ -23,7 +23,18 @@ R3 ile R1 arasındaki komşulukta R3'ün DR olmasını istiyor isek R1'in ospf k
 <img width="1123" height="824" alt="image" src="https://github.com/user-attachments/assets/5334b175-14c9-4fc1-8807-727616381c46" />
 
 
-## 2 WAY
+## INIT State 
+
+Burada karşıdan gelen hello paketinde kendi router-id'sini görmemiştir.
+
+<img width="492" height="26" alt="image" src="https://github.com/user-attachments/assets/b8f2e074-9198-4929-85da-a0b9002636e2" />
+
+Bu sebepten ötürü kendi kendine DR/BDR seçimi yapmaktadır.
+
+<img width="505" height="154" alt="image" src="https://github.com/user-attachments/assets/03559c98-e5b9-45c2-a9fd-89dbc776c056" />
+
+
+## 2 WAY State
 
 2 way iletişimde her iki routerda birbirine hello paketi göndermiştir. Ve hello paketlerinde kendi router-id lerini görmüşlerdir.
 
@@ -35,7 +46,8 @@ Burada DR/BDR seçimi yapılmaya başlandı. Priorty her ikisinde defaultta 1 ol
 
 ## EXSTART State
 
-R3 artık R1'e DBD paketi göndermeye başlar. Bu pakette rota bilgisi yoktur. Amaç master/slave seçimi içindir. Router-id'si büyük olan master olur.
+R3 artık R1'e DBD paketi göndermeye başlar. Bu pakette rota bilgisi yoktur. Amaç master/slave seçimi içindir. Router-id'si büyük olan master olur. Bunun sebebi DBD paketleri gönderirken master olan seq numberı belirler ve slave olanda  seq number'a göre iletişimi sürdürür. Bu şekilde LSDB(Link-State Database)  seknronizasyonu düzenli ve sıralı şekilde yapılmasını sağlar.
+
 
 <img width="563" height="28" alt="image" src="https://github.com/user-attachments/assets/1331d8ba-cb7c-440c-b97f-9632a758d8f4" />
 
@@ -55,3 +67,9 @@ LSA paketleri de gönderildikten sonra exchange işlemi biter ve state FULL duru
 
 
 
+## Kavramlar
+### LSA (Link-State Advertisement)
+ Ağdaki tüm opsf routerlar network yapısını LSA paketleri ile taşır. 
+
+### LSDB (Link-State Database)
+ LSA paketleri ile taşınan bilgilerin depolandığı yer. show ip ospf database komutu görebiliriz.

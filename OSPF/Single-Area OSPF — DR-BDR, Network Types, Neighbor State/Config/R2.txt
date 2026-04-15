@@ -4,7 +4,6 @@ interface Loopback0
  ip address 2.2.2.2 255.255.255.255
  no sh
 
-
 interface GigabitEthernet0/0
  ip address 10.0.12.2 255.255.255.252
  no sh

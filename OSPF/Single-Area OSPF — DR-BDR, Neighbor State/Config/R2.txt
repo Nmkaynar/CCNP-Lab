@@ -1,5 +1,8 @@
 R2(config)#
 
+en
+conf t
+
 interface Loopback0
  ip address 2.2.2.2 255.255.255.255
  no sh

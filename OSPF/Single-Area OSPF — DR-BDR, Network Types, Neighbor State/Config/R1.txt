@@ -6,13 +6,13 @@ interface Loopback0
 
 interface GigabitEthernet0/0
  ip address 10.0.12.1 255.255.255.252
+ no sh
  ip ospf 1 area 0
- no sh 
 
 interface GigabitEthernet1/0
  ip address 10.0.13.1 255.255.255.252
- ip ospf 1 area 0
  no sh
+ ip ospf 1 area 0
 
 router ospf 1
  router-id 1.1.1.1

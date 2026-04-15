@@ -1,5 +1,8 @@
 R1(config)#
 
+en 
+conf t
+
 interface Loopback0
  ip address 1.1.1.1 255.255.255.255
  no sh
@@ -17,3 +20,7 @@ interface GigabitEthernet1/0
 router ospf 1
  router-id 1.1.1.1
 
+exit
+
+debug ip ospf adj 
+clear ip ospf process

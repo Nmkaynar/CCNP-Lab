@@ -1,5 +1,7 @@
 R3(config)#
 
+en
+conf t
 interface Loopback0
  ip address 3.3.3.3 255.255.255.255
  no sh
@@ -17,3 +19,6 @@ interface GigabitEthernet1/0
 
 router ospf 1
  router-id 3.3.3.3
+
+exit
+debug ip ospf adj

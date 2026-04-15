@@ -23,4 +23,4 @@ router ospf 1
 exit
 
 debug ip ospf adj 
-clear ip ospf process
+clear ip ospf process (karşı tarafta debug komutunu çalıştırmadan başlatma)

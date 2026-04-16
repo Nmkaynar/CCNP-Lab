@@ -9,9 +9,11 @@ Ethernet portarında birden fazla router aynı segmentteyse defaultta kullanıl�
 
 - DR/BDR seçimi yapılır
 - Neighbor keşfi otomatik yapılır
-- Hello/dead süreleri 10/40 dır. Hello paketi 10 sn de bir gönderilir. 41. sn de hello paketi gelmez ise komşuluk düşer.
+- Hello/dead süreleri 10/40 saniyedir. Hello paketi 10 sn de bir gönderilir. 41. sn de hello paketi gelmez ise komşuluk düşer.
 - Paketleri Multicast olarak gönderir. 
 - Multicast ip adresleri 224.0.0.5 (tüm routerlara) /224.0.0.6 (sadece DR ve BDR'a)
+- DROTHERS olanlar güncellemelerini 224.0.0.6 multicast ip adresi üzerinden DR/BDR'a gönderir
+- DR ise tüm bilgiyi 224.0.0.5 multicast ip adresi üzerinden tüm routerlara gönderir
 
 
 <img width="498" height="452" alt="image" src="https://github.com/user-attachments/assets/3a21f7ab-8303-41ad-b0d0-d0c0a8d6733e" />
@@ -43,7 +45,7 @@ DROTHER routerlar DR/BDR routerlar ile FULL komşuluk kurarlar.
 
 
 
-show ip ospf interface gigabitEthernet 0/0 ile network  type görebiliriz.
+show ip ospf interface gigabitEthernet 0/0 komutu ile network tipini görebiliriz.
 
 <img width="736" height="501" alt="image" src="https://github.com/user-attachments/assets/576c2978-30dc-47b2-9ffc-adf71821c6af" />
 
@@ -73,7 +75,7 @@ Temel Özellileri
 
 DR/BDR seçimi  yapılmaz
 Neighbor keşfi otomatik yapılır
-Hello/dead süreleri 10/40 dır. Hello paketi 10 sn de bir gönderilir. 41. sn de hello paketi gelmez ise komşuluk düşer.
+Hello/dead süreleri 10/40 saniyedir. Hello paketi 10 sn de bir gönderilir. 41. sn de hello paketi gelmez ise komşuluk düşer.
 Paketleri Multicast olarak gönderir. Multicast ip adresi 224.0.0.5
 
 <img width="473" height="169" alt="image" src="https://github.com/user-attachments/assets/66ad05ac-08bd-4edc-afa1-8b7ebec0b34f" />
@@ -108,7 +110,7 @@ Görüldüğü gibi R2 ile komşuluk kurmaya çalıştı sonra R1 ile tekrar kom
 
 ## Point to Multipoint
 
-DMVPN gibi tasarımlarda yaygın olarak kullanılır. Bu mimaride hub spoke yapısı olduğundan, ki tünel interfacelerde defaultta P2P olduğu için ospf kullıldığında spokeler kendi aralarında komşuluk kuramayacaktır. Bu yüzden network type point to multipoint olarak yapılandırıldığında her spoke bir biriyle komşu olacaktır.
+DMVPN gibi tasarımlarda yaygın olarak kullanılır. Bu mimaride hub spoke yapısı olduğundan, ki tünel interfacelerde defaultta P2P olduğu için ospf kullıldığında spokeler kendi aralarında komşuluk kuramayacaktır. Bu yüzden network type point to multipoint olarak yapılandırıldığında her spoke bir biriyle(bitişik) komşu olacaktır.
 
 
 Temel özellikleri 

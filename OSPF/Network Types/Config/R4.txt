@@ -1,0 +1,17 @@
+R4(config)#
+
+conf t
+
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+ no sh
+
+interface GigabitEthernet0/0
+ ip address 10.1.1.4 255.255.255.0
+ no sh
+
+router ospf 1
+ router-id 4.4.4.4
+
+interface GigabitEthernet0/0
+  ip ospf 1 area 0

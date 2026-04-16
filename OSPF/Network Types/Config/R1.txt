@@ -1,0 +1,19 @@
+R1(config)#
+
+conf t
+
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+ no sh
+
+interface GigabitEthernet0/0
+ ip address 10.1.1.1 255.255.255.0
+ no sh
+ 
+
+router ospf 1
+ router-id 1.1.1.1
+
+
+interface GigabitEthernet0/0
+  ip ospf 1 area 0

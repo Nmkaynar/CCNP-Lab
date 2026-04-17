@@ -1,0 +1,24 @@
+R1(config)#
+
+conf t
+
+interface gi0/0
+ ip address 10.0.12.1 255.255.255.252
+ no sh
+
+interface gi1/0
+ ip address 10.0.14.1 255.255.255.252
+ no sh
+
+interface gi2/0
+ ip address 172.16.1.1 255.255.255.0
+ no sh
+
+router ospf 1
+ router-id 1.1.1.1
+ redistribute connected subnets
+  
+
+inter range gi0/0, gi1/0
+ ip ospf 1 area 0
+

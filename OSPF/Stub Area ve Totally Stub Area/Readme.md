@@ -1,14 +1,14 @@
 ## Stub ve Totally Stub Area 
 
 
-Bu lab çalışması, stub area ve totally stub area anlatmakta ve farkını göstermektedir. Burada  R1'e GigabitEthernet2/0'dan connect olan 172.16.1.0/24  networkünü ospf altında "redistribute connected subnets" şeklinde external olarak enjekte ettik.
+Bu lab çalışması, stub area ve totally stub area kavramlarıno ele almmakta ve aralarındaki fark gösterilmektedir. Burada  R1'e GigabitEthernet2/0'dan connect olan 172.16.1.0/24  networkünü ospf altında "redistribute connected subnets" şeklinde external olarak enjekte ettik.
 
 <p><img width="927" height="602" alt="image" src="https://github.com/user-attachments/assets/05533a9d-1b7e-4acd-a739-8d75e270ac47" /></p>
 
 ## Stub area  
- Stub area olarak yapılandırılan bir ospf areasında ABR router, ASBR routerdan alınan LSA 5 tipindeki paketleri engelleyerek  yerine default route gönderir. Bu da bir den fazla olan external rotaları tek bir satıra  indirerek cihaz yükünü azaltmayı amaçlamaktadır.
+ Stub area olarak yapılandırılan bir ospf areasında ABR router, ASBR routerdan alınan LSA 5 tipindeki paketleri engelleyerek  yerine LSA 3 üreterek default route gönderir. Bu da bir den fazla olan external rotaları tek bir satıra  indirerek cihaz yükünü azaltmayı amaçlamaktadır.
 
-## Ne zaman kullanılır.
+### Ne zaman kullanılır.
   Tüm external rotaya giden tek bir çıkış noktası var ise kullanılabilir.
 
 
@@ -50,7 +50,7 @@ R3 te tekrardan show ip route çıktısına baktığımızda ABR router olan R2 
 
  Totally stub areada  ise ABR router stub areada yaptığına ek olarak internal areadan gelen rotaları da engelleyerek  sadece default route gönderir. 
 
-## Ne zaman kullanılmalı
+### Ne zaman kullanılmalı
  Hem  diğer arealardan gelen rotalar hem de externaldan gelen rotalar için tek bir çıkış noktası var ise kullanılmalıdır.
 
  
@@ -68,7 +68,7 @@ Aynı şekilde komşusunda da girmeliyiz.
 
 
 
-İşlem sonucunda R5te show ip route çıktısına baktğımızda hem internal areadan gelen rotaları hem de externaldan gelen rotaları default rotaya çevirmiştir.
+İşlem sonucunda, R5'te show ip route çıktısına baktığımızda ABR router olan R4 hem internal areadan gelen rotaları hem de externaldan gelen rotaları engelleyerek yerine default route göndermiştir.
 
 <img width="731" height="200" alt="image" src="https://github.com/user-attachments/assets/468a2b3f-4d8d-4343-9ce7-12d5a9a40441" /> <br>
 
@@ -90,7 +90,7 @@ ABR router olan R2, gelen Type-5 LSA'ları engelleyerek yeni bir Type-3 LSA üre
 
 ### R5
 
-R3 te olduğu gibi LSA 4 ve LSA 5 bilgileri bulunmktadır. Ayrıca burada LSA 3 bilgilerinide dikkat edelim.
+Totally stub yapılandırmadan önce R5'te LSA 4 ve LSA 5 bilgileri mevcuttur. Ayrıca burada LSA 3 bilgilerinide dikkat edelim.
 
 <img width="785" height="621" alt="image" src="https://github.com/user-attachments/assets/f6f8aabc-1eed-488b-995b-627d91065642" /> <br>
 

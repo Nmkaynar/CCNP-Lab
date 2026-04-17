@@ -11,7 +11,7 @@ Bu lab çalışması, stub area ve totally stub area anlatmakta ve farkını gö
 
 
 ## Stub area  
- Stub area olarak yapılanrılan bir ospf areasında ABR router, OSPF de ASBR routerdan alınan LSA 5 tipindeki paketleri default route çevirerek stub area enjekte eder. Bu da bir den fazla olan external rotaları tek bir satırar indirerek cihaz yükünü azaltmayı amaçlamaktadır.
+ Stub area olarak yapılandırılan bir ospf areasında ABR router, ASBR routerdan alınan LSA 5 tipindeki paketleri engelleyerek yeni bir LSA 3 üreterek default route olarak  stub area enjekte eder. Bu da bir den fazla olan external rotaları tek bir satıra  indirerek cihaz yükünü azaltmayı amaçlamaktadır.
 
 ## Ne zaman kullanılır.
   Tüm external rotaya giden tek bir çıkış noktası var ise kullanılabilir.
@@ -30,7 +30,7 @@ Farklı arealardan gelen rotalarda IA olarak görülmektedir.
 ### R5:
 
 <img width="694" height="290" alt="image" src="https://github.com/user-attachments/assets/f61a2f4f-b09f-4b52-94d6-9bf84061824f" />  <br>
-Area 1'i Stub area olarak yapılandıralım.
+### Area 1'i Stub area olarak yapılandıralım.
 
 Bunun için hem R2 de hem R3 de ospf altında "area 1 stub" komutunu girmeliyiz.
 
@@ -45,7 +45,7 @@ R3 de yapılandırılınca komşuluk tekrar full state oldu.
 <img width="947" height="157" alt="image" src="https://github.com/user-attachments/assets/647f0cda-a82e-4a90-8129-e4d22afb603d" /> <br>
 
 
-R3 te tekrardan show ip route çıktısına baktığımızda E2 olan external rotasını default route'a bırakmış oldu.
+R3 te tekrardan show ip route çıktısına baktığımızda ABR router olan R2  E2 olan external rota içeren LSA 5 engelledi ve area 1'e default route enjekte etti.
 
 <img width="739" height="275" alt="image" src="https://github.com/user-attachments/assets/2bfe1393-9706-4400-b414-ec39e1375a05" /> <br>
 
@@ -54,12 +54,16 @@ R3 te tekrardan show ip route çıktısına baktığımızda E2 olan external ro
 
 ## Totally Stub area
 
- Totally stub area ise stub areanın yaptığına ek olarak internal areadan gelen rotaları da default route olarak kaydetmesidir.
+ Totally stub areada  ise ABR router stub areada yaptığına ek olarak internal areadan gelen rotaları da engelleyerek  sadece default route gönderir. 
 
 ## Ne zaman kullanılmalı
  Hem  diğer arealardan gelen rotalar hem de externaldan gelen rotalar için tek bir çıkış noktası var ise kullanılmalıdır.
 
-R4 ve R5 de totally stub area yaparak aradaki farkı görelim. Bunun içinde R4 ve R5 te ospf altında "area 2  stub no-summary" komutunu girmeliyiz.
+ 
+
+### R4 ve R5 de totally stub area yaparak aradaki farkı görelim.
+
+Bunun içinde R4 ve R5 te ospf altında "area 2  stub no-summary" komutunu girmeliyiz.
 
 <img width="939" height="98" alt="image" src="https://github.com/user-attachments/assets/d36100af-aae1-4327-9ab9-054f2ca8e58d" /> <br>
 
@@ -83,7 +87,7 @@ Aynı şekilde komşusunda da girmeliyiz.
 
 <img width="761" height="620" alt="image" src="https://github.com/user-attachments/assets/0aae577e-206a-4ba6-bfa0-31ebaf64a688" /> <br>
 
-### Stub area sonrası:
+### Stub area sonrası R3 
 ABR router olan R2, gelen Type-5 LSA'ları engelleyerek yeni bir Type-3 LSA üreterek default  route enjekte etmiştir.
 
 
@@ -98,7 +102,8 @@ R3 te olduğu gibi LSA 4 ve LSA 5 bilgileri bulunmktadır. Ayrıca burada LSA 3 
 
 
 
-Totally stub area olarak yapılandırtıktan sonra R5 de sadece deafult route gösteren LSA 3 bilgisi yer almaktadır.
+### Totally stub area sonrası R5 
+ABR router olan R4 hem LSA 3 olarak gelen rotaları hem de LSA 5 olarak gelen rotaları engelleyerek sadece default rota göndermektedir.
 
 <img width="700" height="390" alt="image" src="https://github.com/user-attachments/assets/85b3a5b8-f70f-4c76-9975-92d132220363" /> <br>
 

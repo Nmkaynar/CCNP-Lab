@@ -1,0 +1,22 @@
+R3(config)#
+
+conf t
+
+
+interface gi0/0
+ ip address 10.0.23.2 255.255.255.252
+ no shutdown
+
+interface gi1/0
+ ip address 192.168.3.1 255.255.255.0
+ no shutdown
+
+router ospf 1
+ router-id 3.3.3.3
+
+inter range gi0/0, gi1/0
+ ip ospf 1 area 1
+
+router ospf 1
+ area 1 stub
+ 

@@ -65,3 +65,11 @@ Authentication bir kimlik doğrulama olduğu için, giden paketlerde datayı şi
 Ancak burada yapılan koruma, sahte router'ın ospf komşuluğu kurmasını ve ağa sahte rotalar enjekte etmesini engellemektir.
 
 Eğer hem kimlik doğrulama hem de veri gizliliği isteniyorsa OSPF trafiği IPsec ile korunmalıdır.
+
+
+
+MD5 ile authentication yapılmasına rağmen LS update paketinde duyurulan network bilgileri görülmektedir.
+
+<img width="885" height="725" alt="image" src="https://github.com/user-attachments/assets/2955f559-8d86-4262-aaa0-922b6ffb3ff6" />
+
+

@@ -34,7 +34,7 @@ R3 te 172.16.1.0/24 networkünü external olarak duyurmak istediğimiz de hata a
 <img width="916" height="112" alt="image" src="https://github.com/user-attachments/assets/da01141a-c371-4509-b881-e19a8904dd81" /><br>
 
 Bunu yapabimek için area 1'i Stub Area yerine NSSA olarak yapılandırmalıyız. Bunu da ``router ospf 1`` altında ``area 1 nssa`` komutunu etkinleştirmeliyiz.<br>
-<img width="533" height="126" alt="image" src="https://github.com/user-attachments/assets/23b9bd6d-99c4-4b4d-97f8-0c9f0fd71cc6" /><br>
+
 
 Area 1 NSSA olarak yapılandırıldığında hem ABR routerdan external rota yani TYPE LSA 5'leri almaz. Aynı zamanda external rotaları TYPE 7 LSA olarak duyurur.<br>
 ABR router ise TYPE 7 LSA'ları TYPE 5 LSA olarak diğer arealara duyurur. 

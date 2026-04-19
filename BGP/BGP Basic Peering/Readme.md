@@ -20,6 +20,7 @@ BGP bir neighbor ile peer olabilmek için şunlara ihiyaç duyar:
 
 
 ## Config
+<img width="978" height="619" alt="image" src="https://github.com/user-attachments/assets/c4905236-577e-40ba-8459-0908aa39ab04" />
 
 <img width="944" height="552" alt="image" src="https://github.com/user-attachments/assets/5789d4dc-0221-4268-b0bd-27dda973c3cd" />
 

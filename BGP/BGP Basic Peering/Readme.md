@@ -4,7 +4,7 @@ BGP (Border Gateway Protocol)i internet üzerindenki Autonomous systemler (AS) a
 BGP protokolü hem external(eBGP) hem de internal (IBGP) olarak kullanılabilir. 
 - External(eBGP) olarak kullanıldığında AD değeri 20 dir. 
 - İnternal (iBPG) olarak kullanıldığında AD değeri 200 dür.
-- TCP 179 portu üzerinde çalışır. Cihazların birbirine bağlı olması gerekmiyor.  
+- TCP 179 portu üzerinde çalışır.  
 - 60 sn de bir keeplive mesajı gönderir.
 - Hold süresi 180 sn dir.
 - Update paketi ile değişiklik var ise gönderilir. 

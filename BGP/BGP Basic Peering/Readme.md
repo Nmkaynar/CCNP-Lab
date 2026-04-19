@@ -56,7 +56,7 @@ BGP komşuluğu kurulduktan sonra her iki router da duyurdukları networkleri bi
 ### TCP Handshake 
 - İki router TCP 179 üzerinden 3 way-handshake bağlantısı kurarlar.
 	
-### OEPN Message
+### OPEN Message
 - AS-NO, 65000
 - Version 4
 - Hold time 180

@@ -35,7 +35,7 @@ network 172.16.10.0 mask 255.255.255.0
 ````
 R1 de olduğu gibi R2 nin kendisinin duyurduğu networkü öğrenmiş
 <img width="508" height="81" alt="image" src="https://github.com/user-attachments/assets/48c68ceb-1aeb-4574-aee6-f52596b925f6" /><br>
-Tabloya baktığımızda IBGP loop engelleme özelliğinden dolayı(Split horizon kuralı) R2, R1 'den öğrendiği networkü R3'e, R3 'ten öğrendiği networküde R1'e öğretmemiş. 
+Tabloya baktığımızda IBGP loop engelleme kuralından dolayı R2, R1 'den öğrendiği networkü R3'e, R3 'ten öğrendiği networküde R1'e öğretmemiş. 
 Bu durumda yapılması gereken FULL MESH ya da Route Reflector.
 
 ## Full MESH
@@ -59,7 +59,7 @@ Topoloji  de R1 ile R3 arasında da bir kablo bağlantısı yapıp R1 ve R3 ile 
 
 
 Buradaki problem ağ büyüdükçe gelen operasyonel zorluk. Eğer 3 router değilde 4 router olsaydı 6 tane komşuluk veya 10 tane router olsaydı 45 tane komşuluk kurulması gerekirdi.
-Ve hepside birbiri ile direkt connect olması gerekirdi. Bu da hem kablo maliyetini hem de yönetim maaliyetini artıracaktır. 
+
 
 
 ## Route Reflectör(RR)

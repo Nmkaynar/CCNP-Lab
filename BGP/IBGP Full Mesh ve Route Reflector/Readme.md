@@ -110,7 +110,7 @@ Standar IBGP yapılandırmasında, split horizon kuralı gereği bir router IBGP
 
 Loop olmasını ise paketlere eklediği  ORIGINATOR_ID ve CLUSTER_LIST ile kontrol etmektedir. <br>
 ORIGINATOR_ID:  Networkü duyuran orjinal router'ın Router-id'si <br>
-CLUSTER_LIST :  RR router'ın kendi Router-id'si <br>
+CLUSTER_LIST :  Route'un geçtiği RR cluster'larının ID listesi. <br>
 Eğer Router'lar kendi ID'lerini görürlerse paketi drop ederler. <br>
 
 <img width="760" height="694" alt="image" src="https://github.com/user-attachments/assets/f3a2a320-b399-4b92-8a6a-ea09c3ffcd16" /><br>

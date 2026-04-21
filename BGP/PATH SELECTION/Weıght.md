@@ -43,25 +43,41 @@ Trace attığımızda da rotanın değiştini görüyoruz.
 Show ip bgp tablosuna baktığımızda ``neighbor 10.0.10.2 weight 100`` ile R2 den öğrenilen tüm rotaların weight değerini değiştini görüyoruz. 
 <img width="742" height="193" alt="image" src="https://github.com/user-attachments/assets/ecbf80a9-9552-4916-a5b1-cd595dcabbe7" />
 
-
-
 Peki sadece bazı  prefixlerin weightini değiştirecek isek yani 172.16.10.0/24 networkü için R3'ü tercih etsin istiyorsak. Bu seferde Route map kullanmamız gerekir.
 
-
+````
 ip prefix-list PL-WEIGHT permit 172.16.10.0/24
 
-route map  RM-WEIGHT permit 10
+route-map RM-WEIGHT permit 10
  match ip address prefix-list PL-WEIGHT
  set weight 500
 
-route map RM-WEIGHT permit 20
+route-map RM-WEIGHT permit 20
  exit
 
+router bgp 65100
+ neighbor 10.0.11.2 route-map RM-WEIGHT in
+````
 
 Uygulamadan önceki hali
-<img width="624" height="270" alt="image" src="https://github.com/user-attachments/assets/cfad2f6e-c489-4285-bf0e-07ca0827b1b0" />
+
+<img width="704" height="192" alt="image" src="https://github.com/user-attachments/assets/8d3b28a0-5a38-41ad-a7cc-f68d4885770f" />
 
 
+Route Map'i aktif ettikten sonra
+
+<img width="736" height="187" alt="image" src="https://github.com/user-attachments/assets/b5b1ba94-5040-4d75-9cb7-1ef081a12f60" />
+
+Görselde de görüldüğü gibi sadece 172.16.10.0/24 networkünün weightini değiştirerek best pathi değiştirdik. 
+R1 172.16.20.0/24 networkü için R4-->R5 rotasını kullanılırken
+R1 172.16.10.0/24 networkü için R3-->R5 rotasını  kullanmaya başladı.
+
+
+### NOT
+
+Weight değerini değiştirmek, sadece işlem yapılan routerda BGP rotalarının en iyi rota seçiminde kullanılır ve cisco cihazlarının ilk baktıkları attribute dur. Ancak burada değiştirilen değer update paketlerinde taşınmazlar.
+Yani outbound yönünde kullanılmaz.
+<img width="665" height="44" alt="image" src="https://github.com/user-attachments/assets/eb82ff01-44cd-4633-af40-1efae1c2e952" />
 
 
 

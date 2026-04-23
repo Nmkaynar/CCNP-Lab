@@ -1,6 +1,7 @@
 ## AS-PATH
 
 - Bir prefixin geçtiği AS(Autonomous System) listesidir.
+- Best Path selectionda 4.adımda bakılan bir attribute'dur.
 - BGP’de loop prevention sağlar (kendi AS’ini görürse route’u reddeder).
 - Kısa olan AS-PATH tercih edilir.
 - eBGP’de her hop’ta AS numarası eklenir, iBGP’de değiştirilmez (preserve edilir).Ne geldiyse o gider
@@ -27,9 +28,9 @@ R5 routerından bakıldığında R1 arkasında ki networke erişmek için R2 rot
 
 
 
-R1'in Lan tarafına gelen trafik R2 tarafından gelmesini istimiyor isek, daha fazla As ekleyerek sanki yol uzunmuş gibi algılanmasını sağlamalıyız. 
+R1'in Lan tarafına gelen trafik R2 tarafından gelmesini istimiyor isek, R1 den duyurduğumuz prefixlere daha fazla As ekleyerek sanki yol uzunmuş gibi algılanmasını sağlamalıyız. 
 
-Aş.daki işlemi R1 de yapmalıyız. Çünkü networkü duyuran R1 Router'ı.
+Aş.daki işlemi R1 de ve out yönünde yapmalıyız. Çünkü networkü duyuran R1 Router'ı. Ve update paketleri outbound yönünde olduğundan.
 ````
 route-map RM-PREPEND permit 10
  set as-path prepend 65100 65100 
@@ -55,12 +56,9 @@ Aş.daki işlemi R1'de uygulamalıyız.
 ip as-path access-list 10 deny _65300_
 ip as-path access-list  10 permit  .*
 
-route-map RM-FILTER permit 10
- match as-path 10
-
 router bgp 65100
- neighbor 10.0.11.2 route-map RM-FILTER in
- clear ip bgp 10.0.11.2 soft in
+ neighbor 10.0.11.2 filter-list 10 in
+ do clear ip bgp 10.0.11.2 soft in
 
 ````
 
@@ -81,6 +79,5 @@ Config aktif edildikten sonra R3 ten gelen rotalar engellendi.
 ^65100_             AS 65100 den direkt gelen rotalar
 _65100$             Origin AS'ı 65100 olan rotalar
 _65100_             As_Path içinde 65100 geçen rotalar
-^65100 65200$       Sadece bu iki AS'tan geçen rotalar
 .*                  Tüm Rotalar
 ````

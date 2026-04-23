@@ -49,7 +49,10 @@ route-map RM-WAN permit 20
  exit
 
 router bgp 65000
- neighbor 192.168.1.1 route-map RM-WAN in 
+ neighbor 192.168.1.1 route-map RM-WAN in
+ end
+
+clear ip bgp 192.168.1.1 soft in 
 ````
 
 Artık R1 ve R2 Router'ları 8.8.8.8 için ISP1, 9.9.9.9 için de ISP2'yi tercih ediyor.  

@@ -14,7 +14,7 @@ Local Pref'i değiştirmenin iki yöntemi vardır.
 
 
 ## 1. Yöntem 
-``bgp default local-prefrence <DEĞER>`` komutu ile yapıldığında tüm rotaların değerini değiştirir. Etkinleştirildiğinde bu routerın diğer IBGP komşularına öğrettiği rotaların değeri atanan değer olur. Ve bu tüm IBGP komşularına aktarılır.
+``bgp default local-preference <DEĞER>`` komutu ile yapıldığında tüm rotaların değerini değiştirir. Etkinleştirildiğinde bu routerın diğer IBGP komşularına öğrettiği rotaların değeri atanan değer olur. Ve bu tüm IBGP komşularına aktarılır.
 
 
 Şu an ki durumda internet çıkışı ISP1 dedir. Bunu ISP2 yapalım.

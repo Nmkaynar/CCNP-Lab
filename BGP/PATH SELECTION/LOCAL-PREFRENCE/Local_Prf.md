@@ -64,6 +64,6 @@ R3 te de bu değerin iletildiğini görebiliyoruz.
 
 
 
-Wiresharkta Uptade mesajı ile Local_PREF taşınmaktadır. 
+Wiresharkta Uptade mesajı ile Local_PREF taşınmaktadır. Bu paket R2'nin R1'e gönderdiği IBGP Update paketidir.
 <img width="738" height="409" alt="image" src="https://github.com/user-attachments/assets/838da49c-0d32-4668-adc3-f1d45027f921" /><br>
 

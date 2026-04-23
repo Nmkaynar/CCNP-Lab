@@ -1,0 +1,40 @@
+R5(config)#
+
+conf t
+
+ 
+interface GigabitEthernet 0/0
+ ip address 172.16.10.1  255.255.255.0
+ no sh
+
+
+interface GigabitEthernet1/0
+ ip address 10.0.13.2 255.255.255.252
+ no sh
+
+interface GigabitEthernet2/0
+ ip address 10.0.14.2 255.255.255.252
+ no sh
+
+interface GigabitEthernet3/0
+ ip address 10.0.15.2 255.255.255.252
+ no sh
+
+interface GigabitEthernet4/0
+ ip address 172.16.20.1 255.255.255.0
+ no sh
+
+
+router bgp 65500
+ bgp router-id 5.5.5.5
+ neighbor 10.0.13.1 remote-as 65200
+ neighbor 10.0.14.1 remote-as 65300
+ neighbor 10.0.15.1 remote-as 65400
+ network 172.16.10.0 mask 255.255.255.0
+ network 172.16.20.0 mask 255.255.255.0
+ 
+
+
+
+
+ 

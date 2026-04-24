@@ -2,7 +2,7 @@
 - Komşu AS ile birden fazla bağlantı var ise kendi ağınıza girmek için hangi giriş yolunu tercih etmesi gerektiğini söylemek için kullanılır
 - Aynı prefix ve AS den gelen rotalarda en düşük MED tercih edilir
 - İnbound trafik kontrolü sağlar. Ancak komşu bunu görmezden gelebilir.
-- MED bir AS içerisine girdiken sonra o AS içinde yayılır ancak başka bir AS'e aktarılmaz.
+- MED bir AS içerisine girdiken sonra o AS içinde yayılır ancak başka bir AS'e aktarılmaz. Yani AS 100 komşusu olan AS 200'e aktarır ancak AS 200  komşusu olan AS 300'e aktarmaz.
 - Defaultta 0 dır
 <img width="601" height="507" alt="image" src="https://github.com/user-attachments/assets/179c5181-5155-47d6-8101-e4e76ce600de" /><br>
 Şu anki topoloji de AS100'den AS65000 deki 172.16.10.0/24 networküne R1, R3 üzerinden R2 de R4 üzerinden gelmektedir.  R2 ninde R1->R3 şeklinde gelmesini istiyor isek MED değerini değiştirerek gelen trafiği manipüle edebiliriz.

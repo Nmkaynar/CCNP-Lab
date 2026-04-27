@@ -24,6 +24,7 @@ Bunun için R2 de yapılması gereken config
 ip prefix-list no-export permit 192.168.10.0/24
 
 route-map RM-ISP2-Out permit 10
+match ip address prefix-list no-export
 set community no-export
 exit
 route-map RM-ISP2-Out permit 20

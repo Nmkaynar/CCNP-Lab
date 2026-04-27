@@ -1,7 +1,3 @@
-## Topoloji 
-<img width="929" height="745" alt="image" src="https://github.com/user-attachments/assets/746c8c0d-c73f-4ff2-b2c9-84a278729b51" />
-
-
 ## Local Pref Artırma 
 Bunun için ISP'nin bize vermiş olduğu 500:200 community'sini kullanacağız.
 

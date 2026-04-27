@@ -1,7 +1,3 @@
-## Topoloji 
-<img width="929" height="745" alt="image" src="https://github.com/user-attachments/assets/8244b09f-dbba-471f-8788-25a29abddf26" />
-
-
 ## Community
 
 

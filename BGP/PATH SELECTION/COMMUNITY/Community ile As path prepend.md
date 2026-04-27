@@ -1,7 +1,3 @@
-## Topoloji
-<img width="929" height="745" alt="image" src="https://github.com/user-attachments/assets/261d2d04-2cbe-41c5-b540-ae4b18e898f1" />
-
-
 ## Community ile As Path Prepend
 
 R2 router'ı adviretise ettiği 192.168.10.0/24 networkü için AS100 ve AS300 ISP2 olan AS600'ü tercih etmekte. 

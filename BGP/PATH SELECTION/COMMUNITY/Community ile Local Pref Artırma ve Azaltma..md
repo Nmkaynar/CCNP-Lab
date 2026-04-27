@@ -25,6 +25,8 @@ router bgp 200
 işlem sonrasında ISP tarafında artık 192.168.10.0/24networkü için local_pref 200 yapılmış oldu.
 ISPRouter2 artık best rotayı ibgp tarafından alıyor. 
 Burada 10.0.14.2 ebgp komşuluğu iken locPref 200 olduğundan ibgp komşuluğunu tercih ediyor. 
+<img width="716" height="228" alt="image" src="https://github.com/user-attachments/assets/1523aaba-2131-432b-bf1c-eaa875efd532" />
+
 
 
 ### Local Pref Azaltma

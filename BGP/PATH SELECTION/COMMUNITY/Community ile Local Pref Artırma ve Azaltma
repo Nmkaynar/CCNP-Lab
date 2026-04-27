@@ -1,0 +1,23 @@
+### Local Pref Artırma 
+Bunun için ISP'nin bize vermiş olduğu 500:200 community'sini kullanacağız.
+
+
+AS200 de yapılan işlem
+````
+ip prefix-list Pref_200 permit 192.168.10.0/24
+
+
+route-map RM-ISP-Out permit 10
+ match ip address prefix-list Pref_200
+ set community 500:200
+
+route-map RM-ISP-Out permit 20
+ exit
+
+router bgp 200
+ neighbor 10.0.12.1  send-community
+ neighbor 10.0.12.1 route-map RM-ISP-Out out
+ do clear ip bgp 10.0.12.1 soft out
+````
+
+ ISPRouter1 de community olarak 500:200 görülmektedir.

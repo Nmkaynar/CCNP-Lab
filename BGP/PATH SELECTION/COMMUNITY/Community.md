@@ -1,3 +1,11 @@
+## Topoloji 
+<img width="929" height="745" alt="image" src="https://github.com/user-attachments/assets/8244b09f-dbba-471f-8788-25a29abddf26" />
+
+
+## Community
+
+
+
 BGP Community, route’ları etiketlemek (taglemek) için kullanılan bir attribute’tur.
 Bu etiketler sayesinde router’lar belirli politikaları uygulayabilir.
 

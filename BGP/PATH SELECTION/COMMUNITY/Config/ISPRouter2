@@ -1,0 +1,33 @@
+ISPRouter2(config)#
+
+conf t
+
+interface GigabitEthernet 0/0
+ ip address 10.0.10.2 255.255.255.252
+ no sh
+
+
+interface GigabitEthernet1/0
+ ip address 10.0.13.1 255.255.255.252
+ no sh
+
+
+interface GigabitEthernet2/0
+ ip address 10.0.14.1 255.255.255.252
+ no sh
+ do wr
+
+
+router bgp 500
+ bgp router-id 5.5.5.5 
+
+ neighbor 10.0.14.2 remote-as 200
+ neighbor 10.0.13.2 remote-as 300
+
+ neighbor 10.0.10.1 remote-as 500
+ neighbor 10.0.10.1 next-hop-self
+
+
+
+
+

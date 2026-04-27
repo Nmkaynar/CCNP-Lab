@@ -1,0 +1,32 @@
+ISP2Router(config)#
+
+conf t
+
+interface GigabitEthernet 0/0
+ ip address 172.16.30.1 255.255.255.252
+ no sh
+
+
+interface GigabitEthernet1/0
+ ip address 172.16.20.1 255.255.255.252
+ no sh
+
+
+interface GigabitEthernet2/0
+ ip address 172.16.10.1 255.255.255.252
+ no sh
+ do wr
+
+
+router bgp 600
+ bgp router-id 6.6.6.6
+
+ neighbor 172.16.10.2 remote-as 100
+ neighbor 172.16.20.2 remote-as 200
+ neighbor 172.16.30.2 remote-as 300
+
+
+
+
+
+

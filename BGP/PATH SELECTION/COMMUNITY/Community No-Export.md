@@ -50,5 +50,6 @@ AS100 (R1) ve AS300 (R3 ) 192.168.20.0/24 prefixini sadece AS500'den (ISP1) öğ
 
 Wiresharkta Update paketi içerisindeki No-Export Communitysi
 
-<img width="738" height="329" alt="image" src="https://github.com/user-attachments/assets/76778e60-9512-4733-a9a1-50bb97460a7e" />
+
+<img width="720" height="366" alt="image" src="https://github.com/user-attachments/assets/6eb77537-2c4b-4e13-b74d-83af3ed6a495" />
 

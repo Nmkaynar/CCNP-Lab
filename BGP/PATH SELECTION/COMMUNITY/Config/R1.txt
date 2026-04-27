@@ -1,0 +1,25 @@
+R1(config)#
+
+conf t
+
+ 
+interface GigabitEthernet0/0
+ ip address 10.0.11.2 255.255.255.252
+ no sh
+ do wr
+
+interface GigabitEthernet 1/0
+ ip address 172.16.10.2 255.255.255.252
+ no sh
+
+router bgp 100
+ bgp router-id 1.1.1.1
+ neighbor 10.0.11.1 remote-as 500
+ neighbor 172.16.10.1 remote-as 600
+
+ 
+
+
+
+
+

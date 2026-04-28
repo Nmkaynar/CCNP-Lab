@@ -30,7 +30,7 @@ Bu durumda R1 router sadece kendisine ait olduğu rotaları duyurması gerekmekt
 R1 de yapılacak config
 
 ````
-ip as-path access-list 10 ^$
+ip as-path access-list 10 permit ^$
 
 route-map My-Networks permit 10
   match as-path 10

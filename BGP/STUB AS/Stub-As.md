@@ -74,7 +74,6 @@ router bgp 65000
     neighbor 10.0.11.1 route-map Only-default-rota in
    do clear ip bgp * soft in
 ````
-Bu çalışmada her iki ISP tarafında neighbor x.x.x.x default-originate olmalıdır. Olmaz ise defalut rota gelmez.
 
 <img width="630" height="123" alt="image" src="https://github.com/user-attachments/assets/dcf7b43a-9a0b-435b-a705-228e64373590" />
 

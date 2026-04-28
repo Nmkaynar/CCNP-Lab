@@ -30,7 +30,7 @@ route-map My-Networks permit 10
   match as-path 10
   exit
 
-route-map My-Netwokrs deny 20
+route-map My-Networks deny 20
   exit
 
 router bgp 65000
@@ -56,7 +56,7 @@ ip prefix-list Default-rota permit 0.0.0.0/0
 
 route-map Only-default-rota permit 10
    match ip address prefix-list Default-rota
-
+route-map Only-default-rota deny 20
 router bgp 65000
     neighbor 10.0.10.1 route-map Only-default-rota in
     neighbor 10.0.11.1 route-map Only-default-rota in

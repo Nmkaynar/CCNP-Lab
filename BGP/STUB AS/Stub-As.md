@@ -13,8 +13,14 @@ Bir AS iki veya daha fazla ISP'ye BGP ile komşuluk kurduğunda, filtreleme yap�
 R1 Router ISP1 den 5.5.5.0/24 prefixini öğrenirken aynı zamanda ISP2 ye de öğretiyor
 Aynı şekilde ISP2 den  de 172.16.10.0/24 prefixini öğrenirken ISP1'e de öğretmiş oluyor. 
 
+R1'in ISP1'e duyurduğu rotalar
+<img width="666" height="158" alt="image" src="https://github.com/user-attachments/assets/267f20b8-557f-4938-8b75-67ae3cb9893d" />
+
+R1'in ISP2'e duyurduğu rotalar
+
+<img width="660" height="150" alt="image" src="https://github.com/user-attachments/assets/5553f612-7ccf-4d80-a714-e9a2f1da6557" />
+
 Bu durumda ISP 1 ve ISP2 bu rotalar için best path olarak AS6500'i seçerse AS65000 transit AS olmuş olacak.
-<img width="639" height="117" alt="image" src="https://github.com/user-attachments/assets/188dbc34-9896-4589-8cec-a23efff9ef97" />
 
 <img width="725" height="122" alt="image" src="https://github.com/user-attachments/assets/539c11d9-dee5-4289-8968-4e20f2f44380" />
 <img width="700" height="125" alt="image" src="https://github.com/user-attachments/assets/af554818-0fa2-4c5a-bfd3-fc62179e399c" />
@@ -39,8 +45,12 @@ neighbor 10.0.11.1 route-map My-Networks out
 ````
  
 R1 ISP1'e 172.16.10.0/24 prefixini duyurmamış oldu
+<img width="687" height="97" alt="image" src="https://github.com/user-attachments/assets/6d206fe2-b8f3-4397-ad8c-a0b00e23439c" />
+
 <img width="669" height="105" alt="image" src="https://github.com/user-attachments/assets/5229b1ae-7cfc-4376-ba3f-737d485b0aae" />
 Aynı şekilde 5.5.5.0/24 prefini de ISP2'ye duyurmamış oldu
+<img width="708" height="108" alt="image" src="https://github.com/user-attachments/assets/b28ad524-1dea-4323-b094-7e13dcea94d4" />
+
 <img width="663" height="101" alt="image" src="https://github.com/user-attachments/assets/46f28bfa-9a1c-4f43-abc4-1e7b01c6fbcf" />
 
 ISP'lerden sadece default rota almak. 

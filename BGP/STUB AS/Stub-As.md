@@ -53,7 +53,7 @@ Aynı şekilde 5.5.5.0/24 prefini de ISP2'ye duyurmamış oldu
 
 <img width="663" height="101" alt="image" src="https://github.com/user-attachments/assets/46f28bfa-9a1c-4f43-abc4-1e7b01c6fbcf" />
 
-ISP'lerden sadece default rota almak. 
+## ISP'lerden sadece default rota almak. 
 
 Her iki ISPden default rotanın yanında farklı prefixlerde alıyoruz.
 

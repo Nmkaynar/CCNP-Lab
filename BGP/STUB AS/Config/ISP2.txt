@@ -1,0 +1,21 @@
+ISP2Router(config)#
+
+conf t
+
+interface GigabitEthernet 0/0
+ ip address 10.0.11.1 255.255.255.252
+ no sh
+
+
+ip route 172.16.10.0 255.255.255.0 null0
+
+router bgp 200
+ bgp router-id 3.3.3.3 
+ neighbor 10.0.11.2    remote-as 65000
+ network 172.16.10.0 mask 255.255.255.0  
+
+
+
+
+
+

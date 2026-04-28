@@ -43,6 +43,7 @@ router bgp 65000
 neighbor 10.0.10.1 route-map My-Networks out
 neighbor 10.0.11.1 route-map My-Networks out
 ````
+"^$" sadece AS-PATH'i boş olan rotaları eşleştirir demektir. Bu da local olarak üretilen rotaları kapsar. Diğer AS'lerden gelen rotalarda en az 1 tane AS NO olacağı için o rotaları outbound yönünde duyurmayacak.
  
 R1 ISP1'e 172.16.10.0/24 prefixini duyurmamış oldu
 <img width="687" height="97" alt="image" src="https://github.com/user-attachments/assets/6d206fe2-b8f3-4397-ad8c-a0b00e23439c" />
@@ -54,6 +55,7 @@ Aynı şekilde 5.5.5.0/24 prefini de ISP2'ye duyurmamış oldu
 <img width="663" height="101" alt="image" src="https://github.com/user-attachments/assets/46f28bfa-9a1c-4f43-abc4-1e7b01c6fbcf" />
 
 ## ISP'lerden sadece default rota almak. 
+
 
 Her iki ISPden default rotanın yanında farklı prefixlerde alıyoruz.
 
@@ -72,6 +74,7 @@ router bgp 65000
     neighbor 10.0.11.1 route-map Only-default-rota in
    do clear ip bgp * soft in
 ````
+Bu çalışmada her iki ISP tarafında neighbor x.x.x.x default-originate olmalıdır. Olmaz ise defalut rota gelmez.
 
 <img width="630" height="123" alt="image" src="https://github.com/user-attachments/assets/dcf7b43a-9a0b-435b-a705-228e64373590" />
 
